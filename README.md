@@ -15,16 +15,11 @@ Run the following commands from your terminal:
 
 ## ScreenShot:
 <img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/6db7c5d1-9326-4424-9021-600460e721b4" width ="400" height = "800">
-
-![Screenshot_1708583048](https://github.com/pkly1219/FlashCardApp/assets/98497119/25fa269a-8f99-49d0-9dc5-1baecfd5fdc9)
-
-![Screenshot_1708583094](https://github.com/pkly1219/FlashCardApp/assets/98497119/19183048-f755-48b1-8720-5e5c2db28149)
-
-![Screenshot_1708583099](https://github.com/pkly1219/FlashCardApp/assets/98497119/e7e36712-56ee-45e1-941e-bd14938f6185)
-
-![Screenshot_1708583105](https://github.com/pkly1219/FlashCardApp/assets/98497119/4ab1a3b2-abd6-4218-b2d5-5ae59838f43a)
-
-![Screenshot_1708583110](https://github.com/pkly1219/FlashCardApp/assets/98497119/6b8eef28-ec69-4881-b337-90d342865649)
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/25fa269a-8f99-49d0-9dc5-1baecfd5fdc9" width ="400" height = "800">
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/19183048-f755-48b1-8720-5e5c2db28149" width ="400" height = "800">
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/e7e36712-56ee-45e1-941e-bd14938f6185" width ="400" height = "800">
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/4ab1a3b2-abd6-4218-b2d5-5ae59838f43a" width ="400" height = "800">
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/6b8eef28-ec69-4881-b337-90d342865649" width ="400" height = "800">
 
 ## Demo Clip:
 https://www.youtube.com/watch?v=svAVtEBo-bo
