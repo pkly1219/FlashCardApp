@@ -38,6 +38,19 @@ dependencies:
   cupertino_icons: ^1.0.2
   flip_card: ^0.7.0
   lottie:
+  animated_text_kit:
+  flutter_native_splash:
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: true
+  image: assets/logo.png
+  color: "#ffffff"
+  android_12: 
+    image: assets/logo.png
+    icon_background_color: "#ff85a2"
+    color: "#ffffff"
   
 dev_dependencies:
   flutter_test:
@@ -50,6 +63,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  
+  
+    
 
  
 
@@ -69,6 +85,7 @@ flutter:
    - images/
    - images/1.png
    - Lottie/
+   - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -82,15 +99,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: Asap
+      fonts:
+       - asset: fonts/Asap-Italic-VariableFont_wdth,wght.ttf
+       - asset: fonts/Asap-VariableFont_wdth,wght.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: Italianno
+      fonts:
+        - asset: fonts/Italianno-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
