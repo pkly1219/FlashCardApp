@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../cores/constants.dart';
 
+//the front side of the flashcard
 class FrontWidget extends StatelessWidget {
    const FrontWidget({
     Key? key,
@@ -19,7 +20,7 @@ class FrontWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       color: card,
       child: Container(
-         height: 200,
+        height: 400,
         width: 300,
         alignment: Alignment.center,
         child : 
@@ -28,7 +29,7 @@ class FrontWidget extends StatelessWidget {
                  // Use a conditional expression to show the image only if imagePath is not empty
             SizedBox(
               width: 200, // Set the width of the container
-              height: 100, // Set the height of the container
+              height: 200, // Set the height of the container
               child: 
                 imagePath.isNotEmpty
                     ? Image.asset(
@@ -42,14 +43,11 @@ class FrontWidget extends StatelessWidget {
               
             ),
                 
-                //Text(imagePath,
-                  //    style: const TextStyle(
-                 //    color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500),
-                 //  ),  
+                
                 const SizedBox(height: 8,),
                  Text(word,
                       style: const TextStyle(
-                     color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500),
+                     color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
                    ),
               ],
             ), // Display the image

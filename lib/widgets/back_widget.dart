@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../cores/constants.dart';
 
+//The back side of the flashcard
 class BackWidget extends StatelessWidget {
   const BackWidget({ super.key,
   required this.definition, 
@@ -14,12 +15,12 @@ class BackWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       color: card,
       child: Container(
-        height: 200,
+        height: 400,
         width: 300,
         alignment: Alignment.center,
         child: Text(definition,textAlign: TextAlign.center,
           style: const TextStyle(
-              color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),
+              color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
         ),
       ),
     );

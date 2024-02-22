@@ -1,5 +1,5 @@
 import 'package:flashcard/models/card_model.dart';
-import 'package:flashcard/pages/welcome_page.dart';
+import 'package:flashcard/pages/flash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flashcard/cores/constants.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: card),
         useMaterial3: true,
       ),
-      home: const WelcomePage(),
+      home: const FlashScreen(),
     );
   }
 }

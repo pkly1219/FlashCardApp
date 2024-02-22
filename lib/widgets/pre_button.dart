@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../cores/constants.dart';
 
+//widget for the previous button on the homepage
 class PreButton extends StatelessWidget {
   const PreButton({super.key, required this. preCard});
 
@@ -15,6 +16,7 @@ class PreButton extends StatelessWidget {
           child: const Text(
                 'Back',
                 textAlign: TextAlign.center,
+                style: buttonStyle,
       )
       ),
     );

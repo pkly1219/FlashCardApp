@@ -1,3 +1,5 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flashcard/cores/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../pages/home_page.dart';
@@ -7,14 +9,29 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
   return Scaffold(
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('Welcome to FlashCard App'),
+          SizedBox(
+            width: 320,
+            child: AnimatedTextKit(animatedTexts: [
+              ColorizeAnimatedText('Welcome to Flashcard App', textStyle: colorizeTextStyle, colors: colorizeColors)
+            ], isRepeatingAnimation: true,),
+          ),
+          Container(
+            child: 
+            Lottie.asset('Lottie/AnimationWelcome.json'),
+            ),
+          const SizedBox(height: 40,),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: background,
+            ),
             onPressed: () {
+              
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -24,12 +41,10 @@ class WelcomePage extends StatelessWidget {
                 ),
               );
             },
-            child: const Text('Next'),
+            child: const Text ('Let\'s Start', 
+                                style: buttonStyle
+                                ),
           ),
-          Container(
-            child: 
-            Lottie.asset('Lottie/Animation.json'),
-            )
         
         ],
       ),

@@ -5,29 +5,76 @@ import 'package:flashcard/models/card_model.dart';
 import 'package:flashcard/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:lottie/lottie.dart';
 
 class AddPage extends StatefulWidget {
-   //final void Function(String, String) onAddCard;
-
-  //const AddPage({Key? key, required this.onAddCard}) : super(key: key);
-const AddPage({super.key});
+  const AddPage({super.key});
   @override
   State<AddPage> createState() => _AddPageState();
 }
 
-class _AddPageState extends State<AddPage> {
+class _AddPageState extends State<AddPage> with SingleTickerProviderStateMixin {
   final _cardController = TextEditingController();  //card name
   final _desController = TextEditingController();   //card description
   final _imageController = TextEditingController(); //card imagepath
-  final _mybox = Hive.box<FlashCard>('flashcardbox');
+  final _mybox = Hive.box<FlashCard>('flashcardbox'); //refer to the box
+  late AnimationController controller; //animation 
   
+  @override
+  void initState(){
+    super.initState();
+    controller = AnimationController(
+      duration: const Duration(seconds: 3), 
+      vsync: this,
+    );
 
-void addCard(String cardName, String description, String imagePath) {
+    controller.addStatusListener((status) async 
+    { 
+      if (status == AnimationStatus.completed)
+      {
+         Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                            
+                          );
+      }
+    });
+  }
+
+  @override
+  void dispose()
+  {
+    controller.dispose();
+    super.dispose();
+  }
+
+
+ void showDoneDialog()=> showDialog(
+  context: context, 
+  builder: (context) => Dialog(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const SizedBox(height: 5),
+        const Text('Add Card Successful!', style: dialogStyle,),
+        Lottie.asset('Lottie/AnimationDone.json',
+                      repeat: false, 
+                      controller: controller,
+                      onLoaded: (composition){
+                        controller.forward();
+                      }),
+        
+        
+        
+      ],
+    )
+  ));
+  void addCard(String cardName, String description, String imagePath) {
    //generate unique value so that when add newcard it does not replace the old card
     final String uniqueKey = DateTime.now().millisecondsSinceEpoch.toString(); 
     final newCard = FlashCard(word: cardName, definition: description, imagePath: imagePath);
     _mybox.put(uniqueKey, newCard);
-    showSnackBar('New card added successfully');
+    
   }
 
   void showSnackBar(String message) {
@@ -84,6 +131,9 @@ void addCard(String cardName, String description, String imagePath) {
              
               Center(
                 child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: background,
+                        ),
                         onPressed: ()  {
                         final cardName = _cardController.text;
                         final description = _desController.text;
@@ -92,21 +142,15 @@ void addCard(String cardName, String description, String imagePath) {
                         // Validate if imagePath is not empty 
                         if (imagePath.isNotEmpty ) {
                           addCard(cardName, description, imagePath);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const HomePage()),
-                            
-                          );
+                          showDoneDialog();
                         } else {
                           
-                          print(File('1.png').existsSync());
-                      
                           showSnackBar('Invalid image path.images');
                           
                         }
  
 
-                        }, child: const Text('Add')),
+                        }, child: const Text('Add', style: buttonStyle)),
               )
             ]
             ),

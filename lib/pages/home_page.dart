@@ -14,8 +14,6 @@ import 'delete_page.dart';
 
 class HomePage extends StatefulWidget {
 
- //const HomePage({super.key});
-
 const HomePage({super.key});
  
 
@@ -26,11 +24,9 @@ const HomePage({super.key});
 class HomePageState extends State<HomePage> {
   final _mybox = Hive.box<FlashCard>('flashcardbox');
   
-    //first index to loop through list of cards
+  //first index to loop through list of cards
   int index = 0; 
-  //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
- 
   //function to display the next card
   void nextCard(){
     setState(() {
@@ -53,6 +49,7 @@ class HomePageState extends State<HomePage> {
     });
     }
 
+    //show snackbar to print out the notification to users
     void showSnackBar(String message) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),
@@ -61,13 +58,11 @@ class HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-  // _mybox.put('flashcard',card1);
-  //  _mybox.put('flashcard1',card2);
-    
+
     return Scaffold(
-        //key: _scaffoldKey, // Assign the GlobalKey to the Scaffold
         appBar: AppBar(
-          title: const Text('Flash Card App'),
+          automaticallyImplyLeading: false,
+          title: const Text('Flashcard App'),
           backgroundColor: appBarColor,
             actions: [
           PopupMenuButton(
@@ -99,27 +94,27 @@ class HomePageState extends State<HomePage> {
             itemBuilder: (BuildContext context) => [
               const PopupMenuItem(
                 value: 'add',
-                child: Text('Add Card'),
+                child: Text('Add Card', style: buttonStyle,),
               ),
               const PopupMenuItem(
                 value: 'delete',
-                child: Text('Delete Card'),
+                child: Text('Delete Card', style: buttonStyle,),
               ),
             ],
           ),
         ],
         ),
         body: 
-        
-        _mybox.isNotEmpty && index >= 0 && index < _mybox.length
-        ? _buildFlipCard()
-        : _buildEmptyCard(),
+            _mybox.isNotEmpty && index >= 0 && index < _mybox.length
+            ? _buildFlipCard()
+            : _buildEmptyCard(),
+          
+      
   
   );
   }
        
-       
-       
+//widget for the box when it has cards inside      
 Widget _buildFlipCard() {
           return SingleChildScrollView(
             child: 
@@ -131,8 +126,8 @@ Widget _buildFlipCard() {
                       children: [
                       
                         const SizedBox(
-                        height: 180,
-                       
+                        height: 100,
+                  
                       ),
                       FlipCard(
                        
@@ -141,13 +136,18 @@ Widget _buildFlipCard() {
                         back:  BackWidget( definition:_mybox.getAt(index)?.definition ?? '',),
                       ),
                       const SizedBox(
-                        height: 40,
+                        height: 60,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          ElevatedButton(onPressed: (){}, child: PreButton(preCard: preCard,)),
-                          ElevatedButton(onPressed: (){}, child: NextButton(nextCard: nextCard,)),
+                          ElevatedButton(style: ElevatedButton.styleFrom(
+                                          backgroundColor: background,
+                                        ),onPressed: (){}, child: PreButton(preCard: preCard,)),
+                          ElevatedButton(style: ElevatedButton.styleFrom(
+                                          backgroundColor: background,
+                                        ),
+                                          onPressed: (){}, child: NextButton(nextCard: nextCard,)),
                         
                         ],
                       )
@@ -159,6 +159,7 @@ Widget _buildFlipCard() {
           );
       }
 
+//widget for empty box
 Widget _buildEmptyCard() {
   return const SingleChildScrollView(
     child: 
@@ -167,16 +168,16 @@ Widget _buildEmptyCard() {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
-              height: 180,
+              height: 100,
             ),
             FlipCard(
               front: FrontWidget(word: '', imagePath: '',),
               back: BackWidget(definition: ''),
             ),
             SizedBox(
-              height: 40,
+              height: 60,
             ),
-            Text('No cards available'),
+            Text('No cards available', style: dialogStyle),
           ],
         ),
       ),
