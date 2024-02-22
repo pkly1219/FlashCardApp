@@ -14,6 +14,11 @@ Run the following commands from your terminal:
 - Many animation is applied to make the app more actractive and interesting
 
 ## ScreenShot:
+
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/f2e8ff0a-7c68-49d1-ae4d-c5a212e48cb1" width ="200" height = "400">
+
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/cd3331bd-f1c1-4fca-8ac8-1f5022482d9f" width ="200" height = "400">
+
 <img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/6db7c5d1-9326-4424-9021-600460e721b4" width ="200" height = "400">
 
 <img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/25fa269a-8f99-49d0-9dc5-1baecfd5fdc9" width ="200" height = "400">
