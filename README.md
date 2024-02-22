@@ -14,7 +14,7 @@ Run the following commands from your terminal:
 - Many animation is applied to make the app more actractive and interesting
 
 ## ScreenShot:
-![Screenshot_1708582802](https://github.com/pkly1219/FlashCardApp/assets/98497119/6db7c5d1-9326-4424-9021-600460e721b4|width = 100)
+<img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/6db7c5d1-9326-4424-9021-600460e721b4" width ="100" height = "250">
 
 ![Screenshot_1708583048](https://github.com/pkly1219/FlashCardApp/assets/98497119/25fa269a-8f99-49d0-9dc5-1baecfd5fdc9)
 
