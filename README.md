@@ -52,19 +52,19 @@ Run the following commands from your terminal:
           speech_to_text: ^7.0.0
       ```
     - Add the following keys to your Info.plist file, located in <project root>/ios/Runner/Info.plist:
-     ```
-        NSSpeechRecognitionUsageDescription
-        NSMicrophoneUsageDescription
-      ```
+       ```
+          NSSpeechRecognitionUsageDescription
+          NSMicrophoneUsageDescription
+       ```
    - Add the record audio permission to your AndroidManifest.xml file, located in <project root>/android/app/src/main/AndroidManifest.xml.
-    ```
-        <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-        <uses-permission android:name="android.permission.INTERNET"/>
-        <uses-permission android:name="android.permission.BLUETOOTH"/>
-        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-        <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
-        
-  ```
+      ```
+          <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+          <uses-permission android:name="android.permission.INTERNET"/>
+          <uses-permission android:name="android.permission.BLUETOOTH"/>
+          <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+          <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+          
+      ```
 ## ScreenShot:
 
 <img src ="https://github.com/pkly1219/FlashCardApp/assets/98497119/f2e8ff0a-7c68-49d1-ae4d-c5a212e48cb1" width ="200" height = "400">
