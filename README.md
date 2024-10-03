@@ -47,12 +47,12 @@ Run the following commands from your terminal:
 2. flutter pub get in the project root directory to install all the required dependencies
 3. Setup for using voice command (speech to text library):
     - This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
-      -```
+      ```
         dependencies:
           speech_to_text: ^7.0.0
       ```
     - Add the following keys to your Info.plist file, located in <project root>/ios/Runner/Info.plist:
-    - ```
+     ```
       NSSpeechRecognitionUsageDescription
       NSMicrophoneUsageDescription
       ```
